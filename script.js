@@ -2,6 +2,9 @@
 
 //Fonction générale du jeu
 function game() {
+    //Demande de nom / pseudo
+    let username = prompt("Comment doit-on vous appeler?");
+
     //Variables
     let playerScore = 0;
     let computerScore = 0;
@@ -32,7 +35,7 @@ function game() {
         //Joueur
         let playerSelection = choiceArray[0];
         let playerChoice = document.createElement("p");
-        playerChoice.innerHTML = "Joueur 1 choisit la pierre";
+        playerChoice.innerHTML = `${username} choisit la pierre`;
         roundDiv.appendChild(playerChoice);
         joueurs.appendChild(roundDiv);
 
@@ -60,9 +63,9 @@ function game() {
         if (playerSelection == choiceArray[0] && computerSelection == choiceArray[2]) {
             playerScore++;
             let winAlert = document.createElement("h3");
-            winAlert.innerHTML = "Le Joueur remporte la manche!";
+            winAlert.innerHTML = `${username} remporte la manche!`;
             let scoreAlert = document.createElement("h3");
-            scoreAlert.innerHTML = `Joueur ${playerScore} - ${computerScore} Ordinateur`;
+            scoreAlert.innerHTML = `${username} ${playerScore} - ${computerScore} Ordinateur`;
             roundDiv.appendChild(winAlert);
             roundDiv.appendChild(scoreAlert);
             joueurs.appendChild(roundDiv);
@@ -74,7 +77,7 @@ function game() {
             let loseAlert = document.createElement("h3");
             loseAlert.innerHTML = "L'Ordinateur remporte la manche!";
             let scoreAlert = document.createElement("h3");
-            scoreAlert.innerHTML = `Joueur ${playerScore} - ${computerScore} Ordinateur`;
+            scoreAlert.innerHTML = `${username} ${playerScore} - ${computerScore} Ordinateur`;
             roundDiv.appendChild(loseAlert);
             roundDiv.appendChild(scoreAlert);
             joueurs.appendChild(roundDiv);
@@ -87,7 +90,7 @@ function game() {
         let roundDiv = document.createElement("div");
 
         //Titre
-        let titre = document.createElement("p");
+        let titre = document.createElement("h2");
         titre.innerHTML = "MANCHE";
         roundDiv.appendChild(titre);
         joueurs.appendChild(roundDiv);
@@ -95,7 +98,7 @@ function game() {
         //Joueur
         let playerSelection = choiceArray[1];
         let playerChoice = document.createElement("p");
-        playerChoice.innerHTML = "Joueur 1 choisit la feuille";
+        playerChoice.innerHTML = `${username} choisit la feuille`;
         roundDiv.appendChild(playerChoice);
         joueurs.appendChild(roundDiv);
 
@@ -123,9 +126,9 @@ function game() {
         if (playerSelection == choiceArray[1] && computerSelection == choiceArray[0]) {
             playerScore++;
             let winAlert = document.createElement("h3");
-            winAlert.innerHTML = "Le Joueur remporte la manche!";
+            winAlert.innerHTML = `${username} remporte la manche!`;
             let scoreAlert = document.createElement("h3");
-            scoreAlert.innerHTML = `Joueur ${playerScore} - ${computerScore} Ordinateur`;
+            scoreAlert.innerHTML = `${username} ${playerScore} - ${computerScore} Ordinateur`;
             roundDiv.appendChild(winAlert);
             roundDiv.appendChild(scoreAlert);
             joueurs.appendChild(roundDiv);
@@ -137,7 +140,7 @@ function game() {
             let loseAlert = document.createElement("h3");
             loseAlert.innerHTML = "L'Ordinateur remporte la manche!";
             let scoreAlert = document.createElement("h3");
-            scoreAlert.innerHTML = `Joueur ${playerScore} - ${computerScore} Ordinateur`;
+            scoreAlert.innerHTML = `${username} ${playerScore} - ${computerScore} Ordinateur`;
             roundDiv.appendChild(loseAlert);
             roundDiv.appendChild(scoreAlert);
             joueurs.appendChild(roundDiv);
@@ -150,14 +153,14 @@ function game() {
         let roundDiv = document.createElement("div");
 
         //Titre
-        let titre = document.createElement("p");
+        let titre = document.createElement("h2");
         titre.innerHTML = "MANCHE";
         roundDiv.appendChild(titre);
 
         //Joueur
         let playerSelection = choiceArray[2];
         let playerChoice = document.createElement("p");
-        playerChoice.innerHTML = "Joueur 1 choisit les ciseaux";
+        playerChoice.innerHTML = `${username} choisit les ciseaux`;
         roundDiv.appendChild(playerChoice);  
         
         //Ordinateur
@@ -184,9 +187,9 @@ function game() {
         if (playerSelection == choiceArray[2] && computerSelection == choiceArray[1]) {
             playerScore++;
             let winAlert = document.createElement("h3");
-            winAlert.innerHTML = "Le Joueur remporte la manche!";
+            winAlert.innerHTML = `${username} remporte la manche!`;
             let scoreAlert = document.createElement("h3");
-            scoreAlert.innerHTML = `Joueur ${playerScore} - ${computerScore} Ordinateur`;
+            scoreAlert.innerHTML = `${username} ${playerScore} - ${computerScore} Ordinateur`;
             roundDiv.appendChild(winAlert);
             roundDiv.appendChild(scoreAlert);
             joueurs.appendChild(roundDiv);
@@ -198,7 +201,7 @@ function game() {
             let loseAlert = document.createElement("h3");
             loseAlert.innerHTML = "L'Ordinateur remporte la manche!";
             let scoreAlert = document.createElement("h3");
-            scoreAlert.innerHTML = `Joueur ${playerScore} - ${computerScore} Ordinateur`;
+            scoreAlert.innerHTML = `${username} ${playerScore} - ${computerScore} Ordinateur`;
             roundDiv.appendChild(loseAlert);
             roundDiv.appendChild(scoreAlert);
             joueurs.appendChild(roundDiv);
@@ -213,14 +216,14 @@ function game() {
 
         if (playerScore == 3) {
             let winMessage = document.createElement("h2");
-            winMessage.innerHTML = `Le Joueur remporte la partie! Score final: Joueur ${playerScore} - ${computerScore} Ordinateur`;
+            winMessage.innerHTML = `${username} remporte la partie! Score final: ${username} ${playerScore} - ${computerScore} Ordinateur`;
             endMessage.appendChild(winMessage);
             joueurs.appendChild(endMessage);
 
             restartButton.style.display = "block";
         } else if (computerScore == 3) {
             let loseMessage = document.createElement("h2");
-            loseMessage.innerHTML = `L'Ordinateur remporte la partie! Score final: Joueur ${playerScore} - ${computerScore} Ordinateur`;
+            loseMessage.innerHTML = `L'Ordinateur remporte la partie! Score final: ${username} ${playerScore} - ${computerScore} Ordinateur`;
             endMessage.appendChild(loseMessage);
             joueurs.appendChild(endMessage);
 
